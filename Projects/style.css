@@ -1,3 +1,4 @@
+/* Definição das fonte, tipo, tamanho, e família */
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
 *
 {
@@ -7,6 +8,7 @@
     font-family: 'Oswald', sans-serif;
 }
 
+/* Aqui está setado o main content do body para renderização de background e tamanho total das divs. */
 body
 {
     display: flex;
@@ -16,6 +18,7 @@ body
     background: #333;
 }
 
+/* Configurações de estilo visual da caixa 3D */
 .box
 {
     position: relative;
@@ -24,12 +27,14 @@ body
     animation: animate 16s linear infinite;
 }
 
+/* Configurações de animação da da caixa, setada para rotação linear infinita */
 @keyframes animate
 {
     0%
     {
         transform: rotateX(-20deg) rotateY(360deg);
     }
+    
     100%
     {
         transform: rotateX(-20deg) rotateY(0deg);
@@ -44,7 +49,7 @@ body
     transform-style: preserve-3d;
 }
 
-.box div .block span
+.box div.block span
 {
     position: absolute;
     left: calc(50% - 100px);
@@ -54,10 +59,14 @@ body
     transform: rotateY(calc(90deg * var(--i))) translateZ(100px);
     transition: 0.5s;
 }
+
+/* Definição do efeito de Hover, junto com adição de sombras para iluminação da caixa */
 .box:hover div.block span{
     background: #f00;
-    filter: drop-shadow(0 0 50 px #f00);
+    filter: drop-shadow(0 0 50px #f00);
 }
+
+/* Definição de estilização do texto "Happy new Year" ao redor da caixa */
 .box div.text span{
     position: absolute;
     width: 100%;
@@ -76,10 +85,13 @@ body
     transform-style: preserve-3d;
 }
 
+/* Diminuição da palavra "Happy", setada e identificada através do data-text criado no span dentro do HTML */
 .box div.text span:nth-child(1)
 {
     font-size: 6em;
 }
+
+/* Criação das sombras de "Happy New Year" logo acima da borda exterior da caixa */
 .box div.text span::before
 {
     content: attr(data-text);
@@ -91,6 +103,8 @@ body
     -webkit-text-stroke: 0px #000;
     filter: blur(5px);
 }
+
+/*  */
 .box div.text span::after
 {
     content: '';
@@ -102,9 +116,9 @@ body
     transform: rotateX(-90deg);
     transition: 0.5;
 }
-
+/* Definição da iluminação com sombras da borda exterior da caixa */
 .box:hover div.text span::after
 {
     background: #f00;
-    filter: drop-shadow(0 0 50 px #f00);
+    filter: drop-shadow(0 0 50px #f00);
 }
