@@ -7,6 +7,6 @@ All of these projects have been learned and coded by watching an youtube channel
 
 1 - Glowing cubes (Online Tutorials) - https://lucastelho.github.io/Projects/Glowing-Cubes/index ;
 
-2 - Happy New Year Glowing box - https://lucastelho.github.io/Projects/HappyNewYear/index ;
+2 - Happy New Year Glowing box - https://lucastelho.github.io/Projects/Happy-New-Year/index ;
 
 3 - NewProject - https://lucastelho.github.io/Projects/NewProject/index ;
