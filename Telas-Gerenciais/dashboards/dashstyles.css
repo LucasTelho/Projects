@@ -9,9 +9,11 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body{
+body
+{
     background-color: rgb(211, 211, 211);
 }
+
 header {
     height: 6em;
     display: flex;
@@ -26,10 +28,23 @@ header {
     color: #f0f0f0;
     text-shadow: 0px 5px 4px rgba(0, 0, 0, 0.5);
 }
-header img 
-{
-    width: 18%;
 
+header .logo
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    border-radius: 2px;
+    transition: 0.7s;
+}
+
+
+header .logo img 
+{
+    width: 100%;
+    padding: 5%;
+    border-radius: 2px;
 }
 
 
@@ -40,7 +55,7 @@ nav ul
     justify-content: center;
     align-items: center;
     gap: 3%;
-    padding-left: 6%;
+
     height: 2rem;
     background-color: #007e1d93;
     text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.5);
@@ -50,8 +65,12 @@ nav ul a
     text-decoration: none;
     color: white;
     letter-spacing: 0.10dvh;
-    border-right: solid white;
-    padding-right: 3%;
+    transition: 0.6s;
+}
+
+nav ul a:hover
+{
+    text-shadow: 0 0 10px #c4c4c4;
 }
 
 section
@@ -71,11 +90,11 @@ section
     justify-content: center;
     align-items: center;
     width: 20%;
-    background-color: #007800;
+    background-color: #008f00;
     border-radius: 15px;
     transition: 0.6s;
     color: #f0f0f0;
-    text-shadow: 0 0 10px #fff;
+    
 }
 .card1 a, .card2 a, .card3 a, .card4 a
 {
@@ -85,6 +104,8 @@ section
 .card1:hover, .card2:hover, .card3:hover, .card4:hover
 {
     transform: translateY(-10%);
+    text-shadow: 0 0 10px #ededed;
+    background-color: #006400;
 }
 
 footer 
