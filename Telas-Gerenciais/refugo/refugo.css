@@ -15,61 +15,89 @@ body
 }
 
 header {
+    position: relative;
     height: 6em;
     display: flex;
-    padding-left: 5% ;
+    padding-left: 5%;
     gap: 25%;
     align-items: center;
     border-bottom: 0.3em solid;
-  /* adjust the width as needed */
+    /* adjust the width as needed */
     border-image: linear-gradient(to right, #75757500, #23eb23);
     border-image-slice: 1;
     background-color: #3a3a3a;
     color: #f0f0f0;
     text-shadow: 0px 5px 4px rgba(0, 0, 0, 0.5);
-}
-
-header .logo
-{
+    z-index: 2;
+  }
+  
+  header .logo {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 15%;
     border-radius: 2px;
     transition: 0.7s;
-}
-
-
-header .logo img 
-{
+  }
+  
+  
+  header .logo img {
     width: 100%;
     padding: 5%;
     border-radius: 2px;
-}
-
-
-nav ul 
-{
-    display: flex;
+  }
+  
+  nav {
+    width: 15%;
+  }
+  
+  nav ul {
+    position: relative;
+    margin-top: -39vh;
+    display: block;
     list-style-type: none;
-    justify-content: center;
-    align-items: center;
-    gap: 3%;
-
-    height: 2rem;
+    height: 8rem;
     background-color: #007e1d93;
     text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.5);
-}
-nav ul a
-{
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    transform: translateY(-2em);
+    opacity: 0;
+    transition: transform 0.6s ease-out, opacity 0.3s ease-out;
+  }
+  
+  /* Show the nav ul when the header is being hovered over */
+  header:hover + section nav ul {
+    transform: translateY(0);
+    opacity: 1;
+    position: fixed;
+    width: 15%;
+  }
+  
+  /* Keep the nav ul visible when it is being hovered over */
+  nav ul:hover {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  /* Hide the nav ul again when the header or nav ul is not being hovered over */
+  header:not(:hover) + section nav ul:not(:hover) {
+    transform: translateY(-2em);
+    opacity: 0;
+  }
+  
+
+nav ul a {
+    display: flex;
+    justify-content: center;
     text-decoration: none;
     color: white;
     letter-spacing: 0.10dvh;
     transition: 0.6s;
+    align-items: center;
 }
 
-nav ul a:hover
-{
+nav ul a:hover {
     text-shadow: 0 0 10px #c4c4c4;
 }
 
@@ -81,21 +109,26 @@ section
     align-items: center;
     width: 100%;
 }
-
-.card1, .card2, .card3, .card4
-{
-    display: flex;
-    margin-top: -6%;
-    height: 10em;
-    justify-content: center;
-    align-items: center;
-    width: 20%;
-    background-color: #008f00;
+#pizza-graph {
+  width: 26% !important;
+  height: 29em !important;
+  margin-left: 5%;
+}
+.inputAndHeader {
     border-radius: 15px;
     transition: 0.6s;
     color: #f0f0f0;
-    
 }
+    /* animation: box-float 0.9s ease-in-out forwards;
+    animation-delay: 0.1s; 
+    transform: translateY(100%);  */
+
+  
+  @keyframes box-float {
+    to {
+      transform: translateY(0%);
+    }
+  }
 .card1 a, .card2 a, .card3 a, .card4 a
 {
     font-size: 1.2em;
@@ -103,7 +136,7 @@ section
 
 .card1:hover, .card2:hover, .card3:hover, .card4:hover
 {
-    transform: translateY(-10%);
+    margin-top: -7%;
     text-shadow: 0 0 10px #ededed;
     background-color: #006400;
 }
