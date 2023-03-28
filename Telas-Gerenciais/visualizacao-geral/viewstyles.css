@@ -49,45 +49,41 @@ header {
   
   nav {
     width: 15%;
-  }
-  
-  nav ul {
-    position: relative;
-    margin-top: -41.1vh;
-    display: block;
+    position: fixed;
+    left: 1em;
+    top: 6em;
+    }
+    
+    nav ul {
+    margin: 0;
+    padding: 0;
     list-style-type: none;
     height: 8rem;
     background-color: #007e1d93;
     text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.5);
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    transform: translateY(-2em);
     opacity: 0;
     transition: transform 0.6s ease-out, opacity 0.3s ease-out;
-  }
-  
-  /* Show the nav ul when the header is being hovered over */
-  header:hover + section nav ul {
+    transform: translateY(0);
+    }
+    
+    header:hover + section nav ul {
     transform: translateY(0);
     opacity: 1;
-    position: fixed;
-    width: 15%;
-  }
-  
-  /* Keep the nav ul visible when it is being hovered over */
-  nav ul:hover {
-    transform: translateY(0);
+    }
+    
+    nav ul:hover {
     opacity: 1;
-  }
-  
-  /* Hide the nav ul again when the header or nav ul is not being hovered over */
-  header:not(:hover) + section nav ul:not(:hover) {
-    transform: translateY(-2em);
+    }
+    
+    header:not(:hover) + section nav ul:not(:hover) {
     opacity: 0;
-  }
+    transform: translateY(-2em);
+    }
   
 
-nav ul a {
+  nav ul a {
     display: flex;
     justify-content: center;
     text-decoration: none;
@@ -100,6 +96,7 @@ nav ul a {
 nav ul a:hover {
     text-shadow: 0 0 10px #c4c4c4;
 }
+
 
 
 section
@@ -115,7 +112,7 @@ section
 
 .cards
 {
-    margin-left: -10%;
+    margin-left: 15%;
     width: 80%;
     display: flex;
     gap: 2%;

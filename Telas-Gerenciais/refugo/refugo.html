@@ -7,23 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="refugo.css">
-    <title>Production</title>
+    <title>Refugo</title>
 </head>
 
 <body>
     <header>
         <div class="logo"><img src="Gallery/Logo-ECO-Plus-Site.png" alt="Logo cliente"></div>
-        <h1>Production</h1>
+        <h1>Refugo</h1>
     </header>
-  
+
     <section>
         <nav>
             <ul>
-                <li title="Início"><a href="../visualizacao-geral/visualizacao-geral.html" rel="prev" target="_self">Início</a></li>
-                <li title="Apontamento"><a href="../apontamento/apontamento.html" rel="next" target="_self">Apontamento</a></li>
-                <li title="Sinalização"><a href="../sinalizacao/sinalizacao.html" rel="prev" target="_self">Sinalização</a></li>
+                <li title="Início"><a href="../visualizacao-geral/visualizacao-geral.html" rel="prev"
+                        target="_self">Início</a></li>
+                <li title="Apontamento"><a href="../apontamento/apontamento.html" rel="next"
+                        target="_self">Apontamento</a></li>
+                <li title="Sinalização"><a href="../sinalizacao/sinalizacao.html" rel="prev"
+                        target="_self">Sinalização</a></li>
                 <li title="Refugo"><a href="../refugo/refugo.html" rel="next" target="_self">Refugo</a></li>
-                <li title="Relatório de Produção"><a href="../relatorio-de-producao/rel-de-prod.html" rel="next" target="_self">Relatório de Produção</a></li>
+                <li title="Relatório de Produção"><a href="../relatorio-de-producao/rel-de-prod.html" rel="next"
+                        target="_self">Relatório de Produção</a></li>
             </ul>
         </nav>
         <div class="inputAndHeader">
@@ -35,28 +39,51 @@
             <input id="operatorInput" type="text" readonly>
             <h4>Modelo do Molde:</h4>
             <input id="moldInput" type="text" readonly>
+            <br>
+            <button id="modalButton">Cadastrar Refugo</button>
         </div>
         <canvas id="pizza-graph"></canvas>
+        
     </section>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         // Get the canvas element and its context
         var canvas = document.getElementById("pizza-graph");
         var ctx = canvas.getContext("2d");
-      
+    
         // Define the data and colors
         var data = {
-            labels: ["Peças Rejeitadas", "Peças Perdidas", "Peças Recuperadas", "Peças concluídas", "Peças refatoradas", "Peças Terceirizadas"],
+            labels: ["Rejeitadas", "Perdidas", "Recuperadas", "Completas", "Refatoradas", "Terceirizadas"],
             datasets: [{
-                data: [10, 10, 10, 10, 10, 10, 10],
-                backgroundColor: ["black", "red", "green", "#f6781d", "blue", "brown", "yellow"]
+                data: [10, 10, 10, 10, 10, 10],
+                backgroundColor: ["#9b4dca", "#f14668", "#34c38f", "#f1b44c", "#3b5de7", "#e74c3c"]
             }]
         };
-      
+    
         // Create the chart
         var myChart = new Chart(ctx, {
             type: 'pie',
             data: data,
+            options: {
+                legend: {
+                    display: true,
+                    position: 'right',
+                    labels: {
+                        fontColor: '#333',
+                        fontSize: 14,
+                        boxWidth: 10
+                    }
+                },
+                tooltips: {
+                    enabled: true,
+                    mode: 'single',
+                    callbacks: {
+                        label: function(tooltipItems, data) {
+                            return data.labels[tooltipItems.index] + ': ' + data.datasets[0].data[tooltipItems.index];
+                        }
+                    }
+                }
+            }
         });
     
         // Set input values based on chart data
@@ -67,10 +94,56 @@
     
         machineInput.value = data.datasets[0].data[0];
         opInput.value = data.datasets[0].data[1];
-        operatorInput.value = data.datasets[0].data[2];
-        moldInput.value = data.labels[2];
+        operatorInput.value = "John Doe";
+        moldInput.value = "Extruder B-401";
     </script>
-      </body>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Apontamento</h2>
+            <form>
+                <h4>Máquina:</h4>
+                <input type="text" placeholder="Insira o número da máquina">
+                <h4>OP:</h4>
+                <input type="text" placeholder="Insira o OP">
+                <h4>Modelo do Molde:</h4>
+                <input type="text" placeholder="Insira o modelo do molde">
+                <h4>Refugo (kg):</h4>
+                <input type="text" placeholder="Insira o peso do refugo">
+        
+                <h3>Motivo:</h3>
+                <h4>Grupo:</h4>
+                <select name="Grupo" id="group">
+                    <option value="" selected hidden>Selecione...</option>
+                    <option value="0">Conexões</option>
+                </select>
+                <h4>Razão:</h4>
+                <select name="options" class="options">
+                    <option value="" selected hidden>Selecione...</option>
+                    <option value="0">Bolha</option>
+                    <option value="1">Bolsa Danificada</option>
+                    <option value="2">Bucha Deslocada</option>
+                    <option value="3">Canal Mal Cortado </option>
+                    <option value="4">Chuvisco</option>
+                    <option value="5">Contração Volumétrica</option>
+                    <option value="6">Cor Fora de Padrão</option>
+                    <option value="7">Corte não conforme</option>
+                    <option value="8">Datador Incorreto</option>
+                    <option value="9">Defeito na Embalagem</option>
+                    <option value="10">Degradação</option>
+                    <option value="11">Dimensional não conforme</option>
+                    <option value="12">Diâmetro externo abaixo do especificado</option>
+                </select>
+                <h4>Causa possível:</h4>
+                <input type="text" placeholder="Insira a causa">
+                <input type="submit" value="Submit" id="submit">
+            </form>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<script src="refugo.js"></script>
     <footer>
         <p>© Copyright - 2023 ECO+</p>
     </footer>

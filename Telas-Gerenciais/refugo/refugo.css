@@ -12,6 +12,7 @@
 body
 {
     background-color: rgb(211, 211, 211);
+    box-sizing: border-box;
 }
 
 header {
@@ -49,45 +50,41 @@ header {
   
   nav {
     width: 15%;
-  }
-  
-  nav ul {
-    position: relative;
-    margin-top: -39vh;
-    display: block;
+    position: fixed;
+    left: 1em;
+    top: 6em;
+    }
+    
+    nav ul {
+    margin: 0;
+    padding: 0;
     list-style-type: none;
     height: 8rem;
     background-color: #007e1d93;
     text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.5);
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    transform: translateY(-2em);
     opacity: 0;
     transition: transform 0.6s ease-out, opacity 0.3s ease-out;
-  }
-  
-  /* Show the nav ul when the header is being hovered over */
-  header:hover + section nav ul {
+    transform: translateY(0);
+    }
+    
+    header:hover + section nav ul {
     transform: translateY(0);
     opacity: 1;
-    position: fixed;
-    width: 15%;
-  }
-  
-  /* Keep the nav ul visible when it is being hovered over */
-  nav ul:hover {
-    transform: translateY(0);
+    }
+    
+    nav ul:hover {
     opacity: 1;
-  }
-  
-  /* Hide the nav ul again when the header or nav ul is not being hovered over */
-  header:not(:hover) + section nav ul:not(:hover) {
-    transform: translateY(-2em);
+    }
+    
+    header:not(:hover) + section nav ul:not(:hover) {
     opacity: 0;
-  }
+    transform: translateY(-2em);
+    }
   
 
-nav ul a {
+  nav ul a {
     display: flex;
     justify-content: center;
     text-decoration: none;
@@ -101,27 +98,117 @@ nav ul a:hover {
     text-shadow: 0 0 10px #c4c4c4;
 }
 
+
 section
 {
-    height: 35.3em;
+    height: 37.3em;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     width: 100%;
+    gap: 5%;
 }
+
 #pizza-graph {
-  width: 26% !important;
-  height: 29em !important;
+  width: 27% !important;
+  height: 30em !important;
   margin-left: 5%;
+  margin-top: 0.6em;
+  box-shadow: 1em 2em 12px rgba(0, 0, 0, 0.15); /* Use a softer box-shadow */
+  border: none; /* Remove the border */
+  border-radius: 8px;
+  background-color: rgba(232, 232, 232, 0.571);
+  padding: 1%;
+  border: solid #f0f0f0;
 }
 .inputAndHeader {
-    border-radius: 15px;
-    transition: 0.6s;
-    color: #f0f0f0;
+  border-radius: 8px;
+  margin-left: -3%;
+  transition: 0.6s;
+  margin-top: 1%;
+  height: 30em;
+  width: 25%; 
+  background-color: rgba(232, 232, 232, 0.571);
+  display: flex;
+  flex-direction: column;  
+  padding-top: 2%;
+  padding-left: 2%;
+  box-shadow: 1em 2em 12px rgba(0, 0, 0, 0.15); /* Use a softer box-shadow */
+  border: solid #f0f0f0;
+  animation: box-float 1s ease-in-out forwards;
+  transform: translateY(40%); /* Start the cards at the bottom */
 }
-    /* animation: box-float 0.9s ease-in-out forwards;
-    animation-delay: 0.1s; 
-    transform: translateY(100%);  */
+
+/* Use a smaller font-size for the header */
+.inputAndHeader h2 {
+  font-size: 1.2rem;
+}
+
+/* Use a lighter font-weight for the input label */
+.inputAndHeader label {
+  font-weight: 300;
+}
+
+/* Style the input field */
+.inputAndHeader input {
+  border-radius: 4px;
+  border: none; /* Remove the border */
+  background-color: #ffffff; /* Use a light background color */
+  padding: 0.5em;
+  margin-bottom: 1em;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #000;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Style the input field on hover */
+.inputAndHeader input:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Use a slightly darker background color */
+}
+
+/* Style the input field when focused */
+.inputAndHeader input:focus {
+  background-color: #fff; /* Use a white background color */
+  box-shadow: 0 0 0 2px #11ff11; /* Add a green outline */
+  outline: none; /* Remove the default outline */
+}
+
+/* Style the submit button */
+.inputAndHeader button {
+  border-radius: 4px;
+  border: none;
+  background-color: #11ff11;
+  color: #000;
+  padding: 0em 1em;
+  font-size: 0.96em;
+  font-weight: 300;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  
+}
+
+/* Style the submit button on hover */
+.inputAndHeader button:hover {
+  background-color: #33da33;
+}
+
+  @keyframes box-float {
+    to {
+      transform: translateY(0%);
+    }
+  }
+
+.inputAndHeader h4
+{
+  color: #000;
+}
+
+.inputAndHeader input
+{
+  width: 85%;
+  color: #000;
+}
 
   
   @keyframes box-float {
@@ -129,17 +216,140 @@ section
       transform: translateY(0%);
     }
   }
-.card1 a, .card2 a, .card3 a, .card4 a
-{
-    font-size: 1.2em;
+
+/* modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: none;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
-.card1:hover, .card2:hover, .card3:hover, .card4:hover
-{
-    margin-top: -7%;
-    text-shadow: 0 0 10px #ededed;
-    background-color: #006400;
+.modal-content {
+  background-color: white;
+  margin: auto;
+  padding: 1.3em;
+  width: 34%;
+  height: auto;
+  border-radius: 0.5em;
+  transition: 0.4s;
+  animation: box-float 0.8s ease-in-out forwards;
+  transform: translateY(50%); /* Start the cards at the bottom */
+  border: none;
+  box-shadow:  0 10 20px rgba(0,0,0,0.2);
 }
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.close {
+  color: #000;
+  position: absolute;
+  top: 1.2em;
+  right: 1.5em;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #959595;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#modalButton {
+  margin: 0.4em 0 auto;
+  background-color: #11ff11;
+  background-image: linear-gradient(to bottom, #11ff11, #33da33);
+  border-radius: 2em;
+  border: none;
+  height: 3em;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  width: 80%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9em;
+}
+
+#modalButton:hover {
+  background-color: #33da33;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+  transform: translateY(-2px);
+}
+
+.modal-content h4 {
+  margin-top: 0;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+.modal-content h2 {
+  margin-top: 1%;
+  padding: 0.3em;
+  border-radius: 0.5em;
+  width: 100%;
+  margin-bottom: 5%;
+  font-size: 1.2em;
+  font-weight: bold;
+  background-color: #f2f2f2;
+  border: none;
+  text-align: center;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="email"] {
+  margin: 0.6em 0;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  border: none;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  font-size: 0.8em;
+}
+
+.modal-content input[type="submit"] {
+  margin: 0 auto;
+  padding: 0.5em;
+  background-color: #f2f2f2;
+  border-radius: 0.5em;
+  border: solid 1px #000;
+  cursor: pointer;
+  font-size: 1em;
+  width: 30%;
+  margin-top: 5%;
+  transition: all 0.3s ease;
+}
+
+.modal-content h3{
+  margin-top: 3%;
+  margin-bottom: 2%;
+}
+
+.modal-content input[type="submit"]:hover {
+  background-color: #d3d3d3;
+}
+.modal-content select {
+  margin-top: 0;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  width: 100%;
+  margin-bottom: 5%;
+  font-size: 0.8em;
+  font-weight: bold;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+
 
 footer 
 {
