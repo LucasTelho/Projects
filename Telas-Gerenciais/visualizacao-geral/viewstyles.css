@@ -112,10 +112,10 @@ section
 
 .cards
 {
-    margin-left: 15%;
+    margin-left: 5%;
     width: 80%;
     display: flex;
-    gap: 2%;
+    gap: 1%;
 }
 
 .card1, .card2, .card3, .card4 {

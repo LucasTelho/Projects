@@ -1,3 +1,4 @@
+
 // Get the modal and button elements
 var modal = document.getElementById("myModal");
 var modalButton = document.getElementById("modalButton");
@@ -12,4 +13,13 @@ close.addEventListener("click", function() {
 modalButton.addEventListener("click", function() {
   modal.style.display = "block";
 });
+
+let dropdown = document.querySelector('.dropdown');
+dropdown.onclick = function (){
+    dropdown.classList.toggle('active');
+}
+
+function show(a){
+    document.querySelector('.text02').value = a;
+}
 
