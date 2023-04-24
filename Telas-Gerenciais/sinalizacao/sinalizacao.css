@@ -48,54 +48,44 @@ header {
   }
   
   nav {
-    width: 15%;
-    position: fixed;
-    left: 1em;
-    top: 6em;
-    }
-    
-    nav ul {
-    margin: 0;
-    padding: 0;
+    width: 10%;
+    position: absolute;
+    height: inherit;
+    left: 0;
+}
+
+nav ul {
+    align-items: center;
     list-style-type: none;
-    height: 8rem;
+    height: inherit;
     background-color: #007e1d93;
     text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.5);
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    opacity: 0;
-    transition: transform 0.6s ease-out, opacity 0.3s ease-out;
+    transition: transform 0.6s ease-out,  0.3s ease-out;
     transform: translateY(0);
-    }
-    
-    header:hover + section nav ul {
-    transform: translateY(0);
-    opacity: 1;
-    }
-    
-    nav ul:hover {
-    opacity: 1;
-    }
-    
-    header:not(:hover) + section nav ul:not(:hover) {
-    opacity: 0;
-    transform: translateY(-2em);
-    }
-  
+}
 
-  nav ul a {
+ul a {
+    width: 100%;
+    padding: 28%;
     display: flex;
     justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 90%;
+    border-bottom: 0.1em solid #3a3a3a;
     text-decoration: none;
     color: white;
     letter-spacing: 0.10dvh;
-    transition: 0.6s;
-    align-items: center;
+    transition: 0.2s;
+    border-image: linear-gradient(to left, #9b9b9b93, #fff) 1; /* set the gradient border */
+    box-sizing: border-box; /* include the border within the width and height of the element */
 }
 
 nav ul a:hover {
-    text-shadow: 0 0 10px #c4c4c4;
+  text-shadow: 0 0 10px #c4c4c4;
+  font-size: 100%;
 }
+
 
 section
 {

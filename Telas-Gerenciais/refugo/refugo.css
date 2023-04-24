@@ -17,7 +17,7 @@ body
 
 header {
     position: relative;
-    height: 6em;
+    height: 4em;
     display: flex;
     padding-left: 5%;
     gap: 25%;
@@ -36,7 +36,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 15%;
+    width: 12%;
     border-radius: 2px;
     transition: 0.7s;
   }
@@ -49,59 +49,48 @@ header {
   }
   
   nav {
-    width: 15%;
-    position: fixed;
-    left: 1em;
-    top: 6em;
-    }
-    
-    nav ul {
-    margin: 0;
-    padding: 0;
+    width: 10%;
+    position: absolute;
+    height: inherit;
+    left: 0;
+}
+
+nav ul {
+    align-items: center;
     list-style-type: none;
-    height: 8rem;
+    height: inherit;
     background-color: #007e1d93;
     text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.5);
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    opacity: 0;
-    transition: transform 0.6s ease-out, opacity 0.3s ease-out;
+    transition: transform 0.6s ease-out,  0.3s ease-out;
     transform: translateY(0);
-    }
-    
-    header:hover + section nav ul {
-    transform: translateY(0);
-    opacity: 1;
-    }
-    
-    nav ul:hover {
-    opacity: 1;
-    }
-    
-    header:not(:hover) + section nav ul:not(:hover) {
-    opacity: 0;
-    transform: translateY(-2em);
-    }
-  
+}
 
-  nav ul a {
+ul a {
+    width: 100%;
+    padding: 28%;
     display: flex;
     justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 90%;
+    border-bottom: 0.1em solid #3a3a3a;
     text-decoration: none;
     color: white;
     letter-spacing: 0.10dvh;
-    transition: 0.6s;
-    align-items: center;
+    transition: 0.2s;
+    border-image: linear-gradient(to left, #9b9b9b93, #fff) 1; /* set the gradient border */
+    box-sizing: border-box; /* include the border within the width and height of the element */
 }
 
 nav ul a:hover {
-    text-shadow: 0 0 10px #c4c4c4;
+  text-shadow: 0 0 10px #c4c4c4;
+  font-size: 100%;
 }
 
 
 section
 {
-    height: 37.3em;
+    height: 39.3em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -231,7 +220,7 @@ section
 }
 
 .modal-content {
-  background-color: white;
+  background-color: #dfdfdf;
   margin: auto;
   padding: 1.3em;
   width: 34%;
@@ -240,7 +229,7 @@ section
   transition: 0.4s;
   animation: box-float 0.8s ease-in-out forwards;
   transform: translateY(50%); /* Start the cards at the bottom */
-  border: none;
+  border: 3px solid white;
   box-shadow:  0 10 20px rgba(0,0,0,0.2);
 }
 
@@ -286,7 +275,7 @@ section
 }
 
 .modal-content h4 {
-  margin-top: 3%;
+  margin-top: 1%;
   font-size: 0.9em;
   font-weight: bold;
 }
@@ -302,6 +291,7 @@ section
   background-color: #f2f2f2;
   border: none;
   text-align: center;
+  color: #454545;
 }
 
 .modal-content input[type="text"],
@@ -321,19 +311,23 @@ section
   border-radius: 0.5em;
   border: solid 1px #000;
   cursor: pointer;
-  font-size: 1em;
+  font-size: 1.1em;
   width: 30%;
   margin-top: 5%;
   transition: all 0.3s ease;
 }
 
+
+
 .modal-content h3{
   margin-top: 3%;
-  margin-bottom: 2%;
 }
 
 .modal-content input[type="submit"]:hover {
-  background-color: #d3d3d3;
+  background-color: #065b00;
+  text-shadow: 0 0 10px white;
+  color: rgba(255,255,255,1);
+  
 }
 .modal-content select {
   margin-top: 0;
@@ -370,58 +364,86 @@ footer p
 
 
 
-/*Mudar cor do sign in para cor do logo da eco;
-user name e password e <A> para um cinza mais escuro ;
-*/
-.dropdown
+
+.dropdown, 
+.dropdown2, 
+.dropdown3, 
+.dropdown4, 
+.dropdown5, 
+.dropdown6
 {
     position: relative;
     height: 2.2em;
+
 }
 
-.dropdown::before
+.dropdown::before, 
+.dropdown2::before, 
+.dropdown3::before, 
+.dropdown4::before, 
+.dropdown5::before, 
+.dropdown6::before
 {
     content: '';
     position: absolute;
-    top: 25px;
+    top: 1.2em;
     right: 28px;
     width: 12px;
     height: 4%;
     background: #555;
-    z-index: 10;
+    z-index: 1;
     transform: rotate(40deg);
     transition: 0.5s;
 }
-.dropdown.active::before
+.dropdown.active::before, 
+.dropdown2.active2::before, 
+.dropdown3.active3::before, 
+.dropdown4.active4::before, 
+.dropdown5.active5::before, 
+.dropdown6.active6::before
 {
-    right: 20px;
-
+    right: 22px;
+    z-index: 1;
 }
 
-.dropdown::after
+.dropdown::after, 
+.dropdown2::after, 
+.dropdown3::after, 
+.dropdown4::after, 
+.dropdown5::after, 
+.dropdown6::after
 {
     content: '';
     position: absolute;
-    top: 25px;
+    top: 1.2em;
     right: 20px;
     width: 12px;
     height: 4%;
     background: #555;
-    z-index: 10;
+    z-index: 1;
     transform: rotate(-40deg);
     transition: 0.5s;
 }
 
-.dropdown.active::after
+.dropdown.active::after,
+.dropdown2.active2::after, 
+.dropdown3.active3::after, 
+.dropdown4.active4::after, 
+.dropdown5.active5::after, 
+.dropdown6.active6::after
 {
-    right: 28px;
-    
+    right: 22px;
 }
 
-.dropdown input 
+.dropdown input, 
+.dropdown2 input, 
+.dropdown3 input, 
+.dropdown4 input, 
+.dropdown5 input, 
+.dropdown6 input      
 {
     position: absolute;
-    top: 0;
+    top: -0.5em;
     left: 0;
     width: 100%;
     height: 100%;
@@ -435,34 +457,149 @@ user name e password e <A> para um cinza mais escuro ;
     border: none;
 }
 
-.dropdown .option
+.dropdown .option, 
+.dropdown2 .option2, 
+.dropdown3 .option3, 
+.dropdown4 .option4
 {
     position: absolute;
-    top: 70px;
+    top: 2.4em;
     width: 100%;
     background-color: #fff;
     box-shadow: 0 30 30px rgba(0,0,0,0.05);
-    border-radius: 10px;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
     overflow: hidden;
     visibility: hidden;
     opacity: 0;
     transition: 0.50s;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    outline: none;
+    border-top: solid 0.1em #eeee;
+    transform-origin: top;
+    transform: translateY(-2%);
+    transition:  0.5s ease-in-out;
+    max-height: 14em; /* set the maximum height */
+    overflow-y: auto; /* add a vertical scrollbar when needed */
+    z-index: 999;
 }
 
-.dropdown.active .option
+.dropdown5 .option5, 
+.dropdown6 .option6 {
+  position: absolute;
+  bottom: 2.2em; /* adjust this value to position the options correctly */
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 30 30px rgba(0, 0, 0, 0.05);
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.50s;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  outline: none;
+  border-bottom: solid 0.1em #eeee;
+  transform-origin: bottom; /* set the transform-origin to bottom */
+  transform: translateY(2%); /* set the initial transform to move the options upwards */
+  max-height: 15em; /* set the maximum height */
+  overflow-y: auto; /* add a vertical scrollbar when needed */
+  z-index: 999;
+}
+
+
+.dropdown.active .option, 
+.dropdown2.active2 .option2, 
+.dropdown3.active3 .option3, 
+.dropdown4.active4 .option4, 
+.dropdown5.active5 .option5, 
+.dropdown6.active6 .option6
 {
     visibility: visible;
     opacity: 1;
+    transform: translateY(0);
 }
 
-.dropdown .option div
+.dropdown .option div, 
+.dropdown2 .option2 div, 
+.dropdown3 .option3 div, 
+.dropdown4 .option4 div, 
+.dropdown5 .option5 div, 
+.dropdown6 .option6 div
 {
     padding: 12px 20px;
     cursor: pointer;
 }
 
-.dropdown .option div:hover
+.dropdown .option div:hover, 
+.dropdown2 .option2 div:hover, 
+.dropdown3 .option3 div:hover, 
+.dropdown4 .option4 div:hover, 
+.dropdown5 .option5 div:hover, 
+.dropdown6 .option6 div:hover
 {
     background: #62baea;
     color: #fff;
+}
+
+
+/* Style for the scrollbar */
+::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+  border-radius: 0.5em;
+}
+
+/* Style for the thumb of the scrollbar */
+::-webkit-scrollbar-thumb {
+  background-color: #4c4c4c; /* Color of the thumb */
+  border-radius: 0.5em; /* Rounded corners */
+}
+
+/* Style for the scrollbar track */
+::-webkit-scrollbar-track {
+  background-color: #d3d3d3; /* Background color of the track */
+  border-radius: 0.5em; /* Rounded corners */
+}
+
+#maquina{
+  margin-bottom: 1%;
+}
+
+#op{
+  margin-top: 3%;
+  margin-bottom: 1%;
+}
+
+#modelo{
+  margin-top: 3%;
+  margin-bottom: 1%;
+}
+
+#refugo{
+  margin-top: 3%;
+}
+
+#motivo{
+  margin-top: 1%;
+}
+
+#razao{
+  margin-top: 3%;
+  margin-bottom: 1%;
+}
+
+#causa
+{
+  margin-top: 3%;
+  margin-bottom: 1%;
+}
+
+#myModal {
+  transition: opacity 0.3s ease-out;
+
+}
+
+.modal.fade {
+  opacity: 0;
+  pointer-events: none;
 }

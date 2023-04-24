@@ -52,68 +52,128 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Apontamento</h2>
-            <h4>Máquina:</h4>
+            <h4 id="maquina">Máquina:</h4>
             <form>
                 <div class="dropdown">
-                    <input type="text" class="text02" readonly placeholder="Dropdown Menu">
+                    <input type="text" class="text02" readonly placeholder="Selecione...">
                     <div class="option">
-                        <div onmouseover="show('Javascript')">Javascript</div>
-                        <div onmouseover="show('ReactJS')">ReactJS</div>
-                        <div onmouseover="show('Photoshop')">Photoshop</div>
+                        <div onmouseover="show('Extrusora - A373')">Extrusora - A373</div>
+                        <div onmouseover="show('Injetora - B480')">Injetora - B480</div>
+                        <div onmouseover="show('Forno Difusor - C507')">Forno Difusor - C507</div>
+                        <div onmouseover="show('Ponte Rolante - D618')">Ponte Rolante - D618</div>
+                        <div onmouseover="show('Torno')">Torno</div>
+                        <div onmouseover="show('Fresadora')">Fresadora</div>
+                        <div onmouseover="show('Chillers')">Chillers</div>
+                        <div onmouseover="show('Medidores de energia')">Medidores de energia</div>
+                        <div onmouseover="show('Datador Incorreto')">Datador Incorreto</div>
+                        <div onmouseover="show('Defeito na Embalagem')">Defeito na Embalagem</div>
+                        <div onmouseover="show('Degradação')">Degradação</div>
+                        <div onmouseover="show('Dimensional não conforme')">Dimensional não conforme</div>
+                        <div onmouseover="show('Diâmetro externo abaixo do especificado')">Diâmetro externo abaixo do especificado</div>
                     </div>
                 </div>
-                <!-- 
-                <select name="options" class="options">
-                    <option value="" selected hidden>Selecione...</option>
-                    <option value="0">Extrusora - A373</option>
-                    <option value="1">Injetora - B480</option>
-                    <option value="2">Forno Difusor - C507</option>
-                    <option value="3">Ponte Rolante - D618</option>
-                    <option value="4">Torno</option>
-                    <option value="5">Fresadora</option>
-                    <option value="6">Chillers</option>
-                    <option value="7">Medidores de energia</option>
-                    <option value="8">Datador Incorreto</option>
-                    <option value="9">Defeito na Embalagem</option>
-                    <option value="10">Degradação</option>
-                    <option value="11">Dimensional não conforme</option>
-                    <option value="12">Diâmetro externo abaixo do especificado</option>
-                </select> -->
-                
-                <h4>OP:</h4>
-                <input type="text" placeholder="Insira o OP">
-                <h4>Modelo do Molde:</h4>
-                <input type="text" placeholder="Insira o modelo do molde">
-                <h4>Refugo (kg):</h4>
+                <h4 id="op">OP:</h4>
+                <div class="dropdown2">
+                    <input type="text" class="text03" readonly placeholder="Selecione...">
+                    <div class="option2">
+                        <div onmouseover="show2('Extrusora - A373')">Extrusora - A373</div>
+                        <div onmouseover="show2('Injetora - B480')">Injetora - B480</div>
+                        <div onmouseover="show2('Forno Difusor - C507')">Forno Difusor - C507</div>
+                        <div onmouseover="show2('Ponte Rolante - D618')">Ponte Rolante - D618</div>
+                        <div onmouseover="show2('Torno')">Torno</div>
+                        <div onmouseover="show2('Fresadora')">Fresadora</div>
+                        <div onmouseover="show2('Chillers')">Chillers</div>
+                        <div onmouseover="show2('Medidores de energia')">Medidores de energia</div>
+                        <div onmouseover="show2('Datador Incorreto')">Datador Incorreto</div>
+                        <div onmouseover="show2('Defeito na Embalagem')">Defeito na Embalagem</div>
+                        <div onmouseover="show2('Degradação')">Degradação</div>
+                        <div onmouseover="show2('Dimensional não conforme')">Dimensional não conforme</div>
+                        <div onmouseover="show2('Diâmetro externo abaixo do especificado')">Diâmetro externo abaixo do especificado</div>
+                    </div>
+                </div>
+
+                <h4 id="modelo">Modelo do Molde:</h4>
+                <div class="dropdown3">
+                    <input type="text" class="text04" readonly placeholder="Selecione a máquina">
+                    <div class="option3">
+                        <div onmouseover="show3('Extrusora - A373')">Extrusora - A373</div>
+                        <div onmouseover="show3('Injetora - B480')">Injetora - B480</div>
+                        <div onmouseover="show3('Forno Difusor - C507')">Forno Difusor - C507</div>
+                        <div onmouseover="show3('Ponte Rolante - D618')">Ponte Rolante - D618</div>
+                        <div onmouseover="show3('Torno')">Torno</div>
+                        <div onmouseover="show3('Fresadora')">Fresadora</div>
+                        <div onmouseover="show3('Chillers')">Chillers</div>
+                        <div onmouseover="show3('Medidores de energia')">Medidores de energia</div>
+                        <div onmouseover="show3('Datador Incorreto')">Datador Incorreto</div>
+                        <div onmouseover="show3('Defeito na Embalagem')">Defeito na Embalagem</div>
+                        <div onmouseover="show3('Degradação')">Degradação</div>
+                        <div onmouseover="show3('Dimensional não conforme')">Dimensional não conforme</div>
+                        <div onmouseover="show3('Diâmetro externo abaixo do especificado')">Diâmetro externo abaixo do especificado</div>
+                    </div>
+                </div>
+                <h4 id="refugo">Refugo (kg):</h4>
                 <input type="text" placeholder="Insira o peso do refugo">
         
-                <h3>Motivo:</h3>
+                <h3 id="motivo">Motivo:</h3>
                 <h4>Grupo:</h4>
-                <select name="Grupo" id="group">
-                    <option value="" selected hidden>Selecione...</option>
-                    <option value="0">Conexões</option>
-                </select>
-                <h4>Razão:</h4>
-                <select name="options" class="options">
-                    <option value="" selected hidden>Selecione...</option>
-                    <option value="0">Bolha</option>
-                    <option value="1">Bolsa Danificada</option>
-                    <option value="2">Bucha Deslocada</option>
-                    <option value="3">Canal Mal Cortado </option>
-                    <option value="4">Chuvisco</option>
-                    <option value="5">Contração Volumétrica</option>
-                    <option value="6">Cor Fora de Padrão</option>
-                    <option value="7">Corte não conforme</option>
-                    <option value="8">Datador Incorreto</option>
-                    <option value="9">Defeito na Embalagem</option>
-                    <option value="10">Degradação</option>
-                    <option value="11">Dimensional não conforme</option>
-                    <option value="12">Diâmetro externo abaixo do especificado</option>
-                </select>
-                <h4>Causa possível:</h4>
-                <img src="" alt="">
-                <input type="text" placeholder="Insira a causa">
-                <input type="submit" value="Submit" id="submit">
+                <div class="dropdown4">
+                    <input type="text" class="text05" readonly placeholder="Selecione o Motivo">
+                    <div class="option4">
+                        <div onmouseover="show4('Bolha')">Bolha</div>
+                        <div onmouseover="show4('Bolsa Danificada')">Bolsa Danificada</div>
+                        <div onmouseover="show4('Bucha Deslocada')">Bucha Deslocada</div>
+                        <div onmouseover="show4('Canal Mal Cortado')">Canal Mal Cortado</div>
+                        <div onmouseover="show4('Chuvisco')">Chuvisco</div>
+                        <div onmouseover="show4('Contração Volumétrica')">Contração Volumétrica</div>
+                        <div onmouseover="show4('Cor Fora de Padrão')">Cor Fora de Padrão</div>
+                        <div onmouseover="show4('Corte não conforme')">Corte não conforme</div>
+                        <div onmouseover="show4('Datador Incorreto')">Datador Incorreto</div>
+                        <div onmouseover="show4('Defeito na Embalagem')">Defeito na Embalagem</div>
+                        <div onmouseover="show4('Degradação')">Degradação</div>
+                        <div onmouseover="show4('Dimensional não conforme')">Dimensional não conforme</div>
+                        <div onmouseover="show4('Diâmetro externo abaixo do especificado')">Diâmetro externo abaixo do especificado</div>
+                    </div>
+                </div>
+                <h4 id="razao">Razão:</h4>
+                <div class="dropdown5">
+                    <input type="text" class="text06" readonly placeholder="Selecione a Razão...">
+                    <div class="option5">
+                        <div onmouseover="show5('Bolha')">Bolha</div>
+                        <div onmouseover="show5('Bolsa Danificada')">Bolsa Danificada</div>
+                        <div onmouseover="show5('Bucha Deslocada')">Bucha Deslocada</div>
+                        <div onmouseover="show5('Canal Mal Cortado')">Canal Mal Cortado</div>
+                        <div onmouseover="show5('Chuvisco')">Chuvisco</div>
+                        <div onmouseover="show5('Contração Volumétrica')">Contração Volumétrica</div>
+                        <div onmouseover="show5('Cor Fora de Padrão')">Cor Fora de Padrão</div>
+                        <div onmouseover="show5('Corte não conforme')">Corte não conforme</div>
+                        <div onmouseover="show5('Datador Incorreto')">Datador Incorreto</div>
+                        <div onmouseover="show5('Defeito na Embalagem')">Defeito na Embalagem</div>
+                        <div onmouseover="show5('Degradação')">Degradação</div>
+                        <div onmouseover="show5('Dimensional não conforme')">Dimensional não conforme</div>
+                        <div onmouseover="show5('Diâmetro externo abaixo do especificado')">Diâmetro externo abaixo do especificado</div>
+                    </div>
+                </div>
+
+                <h4 id="causa">Causa possível:</h4>
+                <div class="dropdown6">
+                    <input type="text" class="text07" readonly placeholder="Selecione a Causa...">
+                    <div class="option6">
+                        <div onmouseover="show6('Bolha')">Bolha</div>
+                        <div onmouseover="show6('Bolsa Danificada')">Bolsa Danificada</div>
+                        <div onmouseover="show6('Bucha Deslocada')">Bucha Deslocada</div>
+                        <div onmouseover="show6('Canal Mal Cortado')">Canal Mal Cortado</div>
+                        <div onmouseover="show6('Chuvisco')">Chuvisco</div>
+                        <div onmouseover="show6('Contração Volumétrica')">Contração Volumétrica</div>
+                        <div onmouseover="show6('Cor Fora de Padrão')">Cor Fora de Padrão</div>
+                        <div onmouseover="show6('Corte não conforme')">Corte não conforme</div>
+                        <div onmouseover="show6('Datador Incorreto')">Datador Incorreto</div>
+                        <div onmouseover="show6('Defeito na Embalagem')">Defeito na Embalagem</div>
+                        <div onmouseover="show6('Degradação')">Degradação</div>
+                        <div onmouseover="show6('Dimensional não conforme')">Dimensional não conforme</div>
+                        <div onmouseover="show6('Diâmetro externo abaixo do especificado')">Diâmetro externo abaixo do especificado</div>
+                    </div>
+                </div>
+                <input type="submit" onclick="submitForm()">
             </form>
         </div>
     </div>
